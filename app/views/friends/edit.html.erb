@@ -1,0 +1,8 @@
+<h1>Editing friend</h1>
+
+<%= render "form", friend: @friend %>
+
+  <hr class="my-4">
+
+ <%= link_to "Back", friends_path, class: 'btn btn-secondary', style: "margin-right:20px;float:right;" %>
+  <%= button_to "Delete friend", @friend, method: :delete, class: 'btn btn-danger', style: 'margin-right:20px;float:right;' %> 

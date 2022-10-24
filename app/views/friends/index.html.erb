@@ -1,0 +1,31 @@
+<h1>Friends</h1>
+
+<div id="friends">
+
+<table class="table table-striped">
+  <thead class="thead-dark">
+      <th scope="row">First Name</th>
+      <th scope="row">Last Name</th>
+      <th scope="row">Email</th>
+      <th scope="row">Phone</th>
+      <th scope="row">Twitter</th>
+      <th scope="row" colspan="3"></th>
+  </thead>
+  <tbody>
+     <% @friends.each do |friend| %>
+         <tr>
+        <td><%= friend.first_name %></td>
+        <td><%= friend.last_name %></td>
+        <td><%= friend.email %></td>
+        <td><%= friend.phone %></td>
+        <td><%= friend.twitter %></td>
+        <td><%= link_to 'Show', friend %></td>
+        <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
+        <td><%= link_to 'Delete', friend, method: :delete, :data => {:confirm => 'Are you sure?'}%> </td>
+      </tr>
+       <% end %>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-secondary" onclick="window.location='<%= new_friend_path %>';">Add Friend</button
+
